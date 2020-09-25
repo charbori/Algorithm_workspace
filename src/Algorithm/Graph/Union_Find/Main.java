@@ -1,4 +1,4 @@
-package Algorithm.Union_Find;
+package Algorithm.Graph.Union_Find;
 
 import java.io.BufferedReader;
 import java.io.IOException;

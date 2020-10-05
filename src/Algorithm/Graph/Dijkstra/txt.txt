@@ -1,0 +1,29 @@
+  int result = 0;
+
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        Arrays.fill(check, false);
+
+        PriorityQueue<Pair> queue = new PriorityQueue<>();
+        queue.add(new Pair(start, 0));
+        dist[start] = 0;
+
+        while(!queue.isEmpty()){
+            Pair curPoint = queue.poll();
+            int curNode = curPoint.target;
+            int curWeight = curPoint.dis;
+
+            if(check[curNode] == true) continue;
+            check[curNode] = true;
+
+            for(int i=0;i<road_list[curNode].size();i++){
+                int nextNode = road_list[curNode].get(i).target;
+                int nextDis = road_list[curNode].get(i).dis;
+
+                if(check[nextNode] == false && dist[nextNode] > curWeight + nextDis){
+                    dist[nextNode] = curWeight + nextDis;
+                    queue.add(new Pair(nextNode, dist[nextNode]));
+                }
+            }
+        }
+
+        return dist[end];

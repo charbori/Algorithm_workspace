@@ -1,4 +1,4 @@
-package Algorithm.Graph;
+package Algorithm.Graph.BFS_DFS_graph;
 
 /**
  * @see <a href="https://www.acmicpc.net/problem/1260">DFS and BFS</a>
@@ -8,7 +8,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
@@ -111,46 +110,19 @@ public class DFSandBFS {
         }
     }
 
-    static void DFS(int s)
-    {
-        for(int i=1;i<n+1;i++)
-        {
-            if(data_hash_key.contains(s))
-            {
-                if(!need_visit.contains(s))
+    static void DFS(int s) {
+        for (int i = 1; i < n + 1; i++) {
+            if (data_hash_key.contains(s)) {
+                if (!need_visit.contains(s))
                     need_visit.add(s);
             }
 
-            if(data_hash_value.contains(s))
-            {
-                if(!need_visit.contains(s))
+            if (data_hash_value.contains(s)) {
+                if (!need_visit.contains(s))
                     need_visit.add(s);
             }
-        }
-
-        while(!need_visit.isEmpty())
-        {
-
-//            int x = idx_node.x;
-//
-//            if(!visited.contains(x))
-//                visited.add(x);
-//
-//            for(int i=1;i<n+1;i++)
-//            {
-//                if(arr[x][i] == 1)
-//                    if(!visited.contains(i))
-//                    {
-//                        if(arr[x][i] == 1)
-//                        {
-//                            need_visit.add(new Node(x,i));
-//                        }
-//                    }
-//            }
-
         }
     }
-
 }
 
 /**

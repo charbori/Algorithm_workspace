@@ -41,5 +41,6 @@ public class ThreadInfoPractice {
         }
         System.out.println("[자동 저장 스레드 그룹의 interrupt 호출]");
         tg.interrupt();
+
     }
 }

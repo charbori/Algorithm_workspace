@@ -4,27 +4,37 @@ public class DataBox {
 
     private String data;
 
-    public synchronized String getData(){
-        if(this.data == null){
-            try{
+    public synchronized String getData() {
+        if(data == null){
+            try {
                 wait();
-            }catch (InterruptedException e){}
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-        String returnValue = data;
-        System.out.println("ConsummerThread가 읽은 데이터:" + returnValue);
+        String temp = data;
+        System.out.println("출력" + data);
         data = null;
+
         notify();
-        return returnValue;
+
+        return temp;
     }
 
-    public synchronized void setData(String data){
+    public synchronized void setData(String data) {
         if(this.data != null){
-            try{
+            try {
                 wait();
-            }catch (InterruptedException e){}
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+
         this.data = data;
-        System.out.println("ProducereThread가 생성한 데이터 : " + data);
+        System.out.println("입력" + data);
+
         notify();
+
     }
 }
+

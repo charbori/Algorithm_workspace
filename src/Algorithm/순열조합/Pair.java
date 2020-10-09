@@ -2,18 +2,18 @@ package Algorithm.순열조합;
 
 public class Pair {
 
-    int x, y;
+    public int x, y;
 
     public Pair(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    int getX() {
+    public int getX() {
         return x;
     }
 
-    int getY() {
+    public int getY() {
         return y;
     }
 }

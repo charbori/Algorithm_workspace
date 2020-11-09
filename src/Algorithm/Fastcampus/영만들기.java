@@ -1,8 +1,5 @@
 package Algorithm.Fastcampus;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,8 +15,6 @@ public class 영만들기 {
 
         int testCase = Integer.parseInt(st.nextToken());
 
-        ScriptEngineManager manager = new ScriptEngineManager();
-        ScriptEngine engine = manager.getEngineByName("js");
 
         for(int i=0;i<testCase;i++){
             st = new StringTokenizer(br.readLine());
@@ -95,6 +90,7 @@ public class 영만들기 {
                     System.out.println(strAnswer);
                 }
             }
+            System.out.println();
         }
     }
 
@@ -114,3 +110,4 @@ public class 영만들기 {
         }
     }
 }
+
